@@ -9,28 +9,41 @@
     font-family: 'Source Sans Pro', sans-serif;
 }
 
-header {
-    width: auto;
-    height: 90px;
+#logo {
+    width: 130px;
+    height: auto;
+}
+
+#header {
+    box-sizing: border-box;
+    width: 100vw;
+    height: 80px;
+    padding: 1rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background-color: #000;
 }
 
 #nav {
-    width: 60%;
+    width: auto;
     display: flex;
 }
 
 #btn-mobile {
     display: none;
-    background-color: whitesmoke;
 }
 
 #menu {
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    gap: 5%;
+    align-items: center;
+}
+
+#menu a {
+    display: block;
+    padding: .5rem;
 }
 
 li {
@@ -46,10 +59,7 @@ li:hover {
     color: #D21617;
 }
 
-#logo {
-    width: 150px;
-    height: auto;
-}
+
 
 #banner {
     background-image: url(https://pbs.twimg.com/media/FBwJWeQXIAItfyH.jpg:large);
@@ -81,7 +91,7 @@ li:hover {
 
 #sinopse {
     width: 50%;
-    height: 248px;
+    height: 410px;
     text-align: justify;
     display: flex;
     flex-direction: column;
@@ -93,8 +103,10 @@ li:hover {
 .description {
     color: #fff;
     font-size: 19px;
-    width: 75%;
-    
+    width: 80%;
+    height: 410px;
+    padding-top: 12%;
+    margin-top: 10%;
 }
 
 .button {
@@ -112,7 +124,7 @@ li:hover {
     align-items: center;
     font-weight: bold;
     border: none;
-    margin-top: 25px;
+    margin-top: 10%;
 
 }
 
@@ -144,7 +156,7 @@ li:hover {
     background-position: 50% 50%;
     border-radius: 5px;
     cursor: pointer;
-    transition: .2s;
+    transition: .3s;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -155,8 +167,9 @@ li:hover {
 }
 
 .card:hover {
-    transform: scale(1.02);
+    transform: scale(1.05);
 }
+
 .banner1 {
     background-image: url('https://cdn6.campograndenews.com.br/uploads/noticias/2022/03/03/443148a8f53ea202877fde6176fe0093459a2dda.jpg');
 }
@@ -179,10 +192,10 @@ footer {
 
  span {
     color: #fff;
-    margin-bottom: 20px;
+    padding: 1% ;
 }
 
-a {
+span a {
     text-decoration: none;
     color: whitesmoke;
 }
@@ -202,48 +215,66 @@ a {
 
 @media(max-width: 600px) {
 
-    #logo {
-        margin: auto;
-        position: relative;
-        left: 33%;
-     }
-
     #menu {
-        display: block;
+       /* display: none;*/
+       position: absolute;
+       width: 0vw;
+        height: 0;
         text-align: center;
         padding: 2%;
-        position: absolute;
-        width: 100vw;
-        height: 0;
+        
+        
         transition: .6s;
-        top: 90px;
+        top: 80px;
         right: 0;
         z-index: 1000;
         visibility: hidden;
-        overflow-y: hidden;
+        overflow-y: auto;
     }
 
     #nav.active #menu {
-        display: block;
-        height: 100vh;
-        width: 100vw;
+        display: flex;
+        height: auto;
+        width: 98vw;
         visibility: visible;
     }
 
-    li {
-        padding: 2%;
-        border-bottom: 1px solid rgba(245, 245, 245, 0.581);
-        width: 100vw;
+    #btn-mobile {
+        display: block;
+        margin: 10px;
+        padding: 3%; 
+        font-size: 1 rem;
+        border: none;
+        background: none;
+        cursor: pointer;
     }
 
-    #btn-mobile {
-        display: flex;
-        padding: 1%;
+    #burger {
+        display: block;
+        width: 30px;
+        border-top: 3px solid white;
+        margin-right: 10px;
+        margin-bottom: 20px;
+        border-radius: 2px;
     }
+
+    #burger::after, #burger::before {
+        content: '';
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: currentColor;
+        margin-top: 5px;
+        border-radius: 2px;
+    }
+
+   #nav.active #btn-mobile {
+        background-color: aquamarine;
+   }
 
     .footer-navigation {
-        display: flex;
+        display: none;
+        width: 90vw;
     }
-}
 
-16,20
+}
